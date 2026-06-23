@@ -127,6 +127,6 @@ class Employee(generics.ListCreateAPIView):
 class EmployeeDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
-    lookup_field = ['pk']
+    lookup_field = 'pk'
 
  
