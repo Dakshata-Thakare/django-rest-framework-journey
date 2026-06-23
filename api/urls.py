@@ -5,5 +5,7 @@ urlpatterns = [
     path('students/',views.studentsView),
     #function based view
     path('students/<int:pk>/',views.studentDetailView),
+    #class based view
+    path('employees/',views.Employees.as_view())
 
 ]

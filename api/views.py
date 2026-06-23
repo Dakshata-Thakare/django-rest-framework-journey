@@ -55,6 +55,10 @@ def studentDetailView(request,pk):
 
 
 
+##class based views
+class Employees(APIView):
+    pass
+
 
 
 
