@@ -132,6 +132,7 @@ class EmployeeDetail(generics.RetrieveUpdateDestroyAPIView):
 '''
 
 
+'''
 # ViewSet + router 
 class EmployeeViewSet(viewsets.ViewSet):
     def list(self,request):
@@ -164,6 +165,11 @@ class EmployeeViewSet(viewsets.ViewSet):
         employee.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+'''
 
-        
+# ModelViewSet with DefaultRouter for automatic CRUD operations
+class EmployeeViewSet(viewsets.ModelViewSet):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
+
  
