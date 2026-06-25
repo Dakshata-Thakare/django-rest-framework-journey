@@ -9,7 +9,7 @@ from rest_framework.decorators import APIView, api_view
 from rest_framework import mixins ,generics , viewsets
 from blogs.models import Comment ,Blog
 from blogs.serializers import BlogSerializer,CommentSerializer
-
+from .paginations import CustomPagination
 # Create your views here.
 # #this is manual validation
 # def studentsView(request):
@@ -173,6 +173,7 @@ class EmployeeViewSet(viewsets.ViewSet):
 class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
+    pagination_class = CustomPagination
 
 class BlogsView(generics.ListCreateAPIView):
     queryset = Blog.objects.all()
