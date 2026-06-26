@@ -174,6 +174,8 @@ class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
     pagination_class = CustomPagination
+    filterset_fields = ['designation']
+
 
 class BlogsView(generics.ListCreateAPIView):
     queryset = Blog.objects.all()
